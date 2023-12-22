@@ -1,0 +1,1032 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--light-blue: hsl(231, 69%, 60%);
+	--light-red: hsl(0, 94%, 66%);
+	--grey: hsl(229, 8%, 60%);
+	--dark-blue: hsl(229, 31%, 21%);
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	position: relative;
+	font-family: "Rajdhani", sans-serif;
+	min-height: 100vh;
+	font-size: 1.8rem;
+	font-family: "Rubik", sans-serif;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1440px;
+	padding: 40px;
+	overflow: hidden;
+}
+
+.navigation {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.heroImage {
+	position: relative;
+	height: 300px;
+	margin: 10px;
+	margin-top: 30px;
+	width: 100%;
+	margin-bottom: 80px;
+}
+
+.backgroundElement {
+	position: absolute;
+	top: 65%;
+	left: 80%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	max-width: 1000px;
+	height: 185px;
+	background-color: var(--light-blue);
+	border-bottom-left-radius: 75px;
+	z-index: 1;
+}
+
+.img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	max-width: 400px;
+	z-index: 2;
+}
+
+.title {
+	text-align: center;
+	font-size: 2.5rem;
+	margin: 10px 0;
+}
+
+.text {
+	color: var(--grey);
+	text-align: center;
+	margin: 20px 0;
+	line-height: 2rem;
+	font-size: 1.5rem;
+}
+
+button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	width: 48%;
+	border: 3px solid var(--light-blue);
+	background-color: var(--light-blue);
+	border-radius: 5px;
+	font-family: "Rubik", sans-serif;
+	margin: 10px 0;
+	color: white;
+	cursor: pointer;
+	font-size: 1.3rem;
+	max-width: 300px;
+
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.greyButton {
+	border: 3px solid hsl(229, 8%, 90%);
+	background-color: hsl(229, 8%, 90%);
+	color: black;
+}
+
+.greyButton:hover {
+	color: var(--grey);
+}
+
+.buttonSection {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+h2 {
+	text-align: center;
+	margin: 30px 10px 10px 10px;
+	font-size: 2rem;
+}
+
+.option {
+	position: relative;
+	padding: 13px 0;
+	text-align: center;
+	color: hsl(229, 8%, 40%);
+	font-size: 1.5rem;
+	width: 100%;
+	cursor: pointer;
+	font-size: 1.4rem;
+}
+.optionContainer {
+	width: 100%;
+}
+
+.options {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+.options:last-child {
+	border-bottom: 1px solid var(--grey);
+}
+
+.flex-column {
+	flex-direction: column;
+	width: 100%;
+}
+
+.options.flex-column .option {
+	border-top: 1px solid var(--grey);
+}
+
+.options.flex-row .option {
+	border-bottom: 1px solid var(--grey);
+}
+
+.flex-row {
+	flex-direction: row;
+	width: 70%;
+}
+
+.option.active::after {
+	content: "";
+	position: absolute;
+	bottom: 0px;
+	left: 30%;
+	width: 40%;
+	height: 4px;
+	background-color: var(--light-red);
+}
+
+.rotated {
+	top: 75%;
+	left: 10%;
+	width: 150%;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 75px;
+}
+
+.card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 10px;
+	box-shadow: 0 2px 20px -2px hsl(229, 8%, 90%);
+	margin: 20px;
+	overflow: hidden;
+	max-width: 250px;
+}
+
+.cardImage {
+	width: 30%;
+	margin: 40px 0;
+}
+
+.cardText {
+	margin: 5px;
+	margin-bottom: 20px;
+	font-size: 1.5rem;
+	margin-top: 15px;
+	color: var(--grey);
+}
+
+.cardButton {
+	width: 80%;
+	margin-bottom: 20px;
+}
+
+.dots {
+	margin-bottom: 10px;
+}
+
+.questionsAccordion,
+.accordionBox {
+	width: 100%;
+}
+
+.accordionItem {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+	width: 100%;
+	padding: 15px 0;
+	font-size: 1.5rem;
+	border-bottom: 1px solid var(--grey);
+}
+
+.expanded {
+	border-bottom: 0;
+}
+
+.accordionContent {
+	width: 100%;
+	padding-top: 20px;
+	line-height: 2.5rem;
+	padding-bottom: 20px;
+	color: var(--grey);
+	font-size: 1.5rem;
+	border-bottom: 1px solid var(--grey);
+}
+.questionButton {
+	width: 30%;
+	margin: 50px;
+	margin-bottom: 70px;
+}
+
+.accordionIcon {
+	color: var(--light-blue);
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+.accordionBox:first-child {
+	border-top: 1px solid var(--grey);
+}
+
+.accordionIcon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.questions {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	margin-top: 70px;
+}
+
+.newsletter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: var(--light-blue);
+	color: white;
+}
+
+.counter {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	letter-spacing: 0.3rem;
+	margin-top: 50px;
+}
+
+.form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 30px;
+	width: 100%;
+}
+
+.input {
+	width: 90%;
+	padding: 10px;
+	border: none;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	font-size: 1.6rem;
+	padding-left: 20px;
+}
+
+.input:focus {
+	outline: none;
+}
+
+.errorInput {
+	display: flex;
+	align-items: center;
+	background-color: white;
+	width: 100%;
+
+	border-radius: 10px;
+}
+
+.formDiv {
+	width: 300px;
+	background-color: white;
+	border-radius: 5px;
+}
+
+.errorImage {
+	background-color: white;
+	padding: 9px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.errorInput {
+	border: 3px solid var(--light-red);
+	height: 100%;
+}
+
+.error {
+	background-color: var(--light-red);
+	color: white;
+	font-style: italic;
+	font-size: 1rem;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	padding: 5px;
+	padding-left: 15px;
+	margin-top: -5px;
+}
+
+.newsBtn {
+	width: 300px;
+	background-color: var(--light-red);
+	margin-top: 15px;
+	margin-bottom: 50px;
+}
+
+.footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: var(--dark-blue);
+	color: white;
+}
+
+.footerLogo {
+	width: 40%;
+	margin: 40px 0 25px 0;
+}
+
+.footerLink {
+	margin: 15px;
+	cursor: pointer;
+	transition: color 0.3s;
+}
+
+.socials {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 40%;
+	max-width: 150px;
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
+
+.socialLogo {
+	cursor: pointer;
+}
+
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 5;
+	padding: 20px;
+}
+
+.modal {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+	background: white;
+	padding: 20px;
+	border-radius: 8px;
+
+	overflow: hidden;
+	font-size: 1.4rem;
+}
+
+.modal > .flex-row {
+	width: 100%;
+}
+
+.modal > .options > .optionContainer > .option {
+	font-size: 1rem;
+}
+
+.modal > .options > .optionContainer > .option::after {
+	width: 100%;
+	left: 0;
+}
+
+.modalImage > .backgroundElement {
+	height: 120px;
+	left: 0;
+}
+
+.modalImage > .imgModal {
+	top: 10%;
+	left: 60%;
+}
+
+.modalText > .text {
+	width: 100%;
+}
+
+.modalOptions {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+}
+
+.modal-close {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	background: none;
+	border: none;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.modalContent {
+	width: 100%;
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modalImage {
+	position: relative;
+	width: 100%;
+	margin-right: 10px;
+}
+
+.imgModal {
+	position: absolute;
+	width: 80%;
+	z-index: 4;
+	left: 60%;
+	transform: translate(-50%, -65%);
+	max-width: 150px;
+}
+
+.backgroundElement.modalBackground {
+	position: absolute;
+	z-index: 1;
+}
+
+.modalText {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: column;
+	width: 80%;
+}
+
+.modalText > .text {
+	text-align: left;
+	font-size: 1rem;
+	margin-bottom: 5px;
+}
+
+.modalText > h2 {
+	margin: 0;
+	font-size: 1.2rem;
+}
+
+.modalButton {
+	width: 80px;
+	font-size: 1rem;
+	padding: 10px 0;
+}
+
+.modalOption {
+	width: 100%;
+}
+
+.modalClose {
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	width: 20px;
+	cursor: pointer;
+}
+
+.feature {
+	margin-top: 100px;
+}
+
+.up {
+	color: var(--light-red);
+}
+
+.menuContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(37, 43, 70, 90%);
+	z-index: 10;
+	width: 100%;
+	height: 100vh;
+	padding: 20px;
+}
+
+.menuOptionsContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+}
+
+.menuLogoContainer {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	margin: 30px 0 50px 0;
+}
+
+.menuLogoContainer .closeMenu {
+	width: 15px;
+	height: 15px;
+}
+
+.menuOption {
+	border-top: 0.5px solid var(--grey);
+	width: 100%;
+	text-align: center;
+	color: white;
+	font-size: 2rem;
+	padding: 15px;
+	letter-spacing: 0.5rem;
+}
+
+.menuOption:nth-of-type(3) {
+	border-bottom: 1px solid var(--grey);
+	margin-bottom: 20px;
+}
+
+.menuButton {
+	background-color: transparent;
+	border: 2px solid white;
+	width: 100%;
+	font-size: 1.8rem;
+	box-shadow: none;
+	cursor: pointer;
+	letter-spacing: 0.5rem;
+}
+
+.logoContainer {
+	width: 25%;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 50px;
+}
+
+.desktopNavContainer {
+	display: none;
+}
+
+.footerContainer {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.cardsContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+}
+
+.newsletter > h2 {
+	width: 70%;
+}
+
+.cardButton:hover,
+button:hover {
+	background-color: white;
+	color: var(--light-blue);
+}
+
+.option:hover {
+	color: var(--light-red);
+}
+
+.newsBtn:hover {
+	color: var(--light-red);
+}
+
+.footerLink:hover {
+	color: var(--light-red);
+}
+
+.bookmarkSectionText > button {
+	display: none;
+}
+
+.extension {
+	margin-top: 100px;
+}
+
+.burgerBtn,
+.closeMenu {
+	cursor: pointer;
+}
+
+.socialLogo path {
+	transition: fill 0.3s;
+}
+
+.socialLogo:hover path {
+	fill: var(--light-red);
+}
+
+.footerLogo g path {
+	fill: white;
+}
+
+.mobileMenuLogo g path,
+.mobileMenuLogo g circle {
+	fill: white;
+}
+
+.mobileMenuLogo > g g path {
+	fill: var(--dark-blue);
+}
+
+@media (min-width: 1000px) {
+	.wrapper {
+		padding: 40px 90px;
+	}
+
+	.desktopNavContainer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 45%;
+		font-size: 1.3rem;
+	}
+
+	.burgerBtn {
+		display: none;
+	}
+
+	.desktopNavBtn {
+		width: 25%;
+		min-width: 100px;
+		padding: 10px;
+		background-color: var(--light-red);
+		border: 3px solid var(--light-red);
+		transition: backgroundColor 0.3s, color 0.3s;
+	}
+
+	.desktopNavBtn:hover {
+		background-color: white;
+		color: var(--light-red);
+	}
+
+	.desktopNavEl {
+		cursor: pointer;
+		transition: color 0.3s;
+	}
+
+	.desktopNavEl:hover {
+		color: var(--light-red);
+	}
+
+	.headerSection {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-left: 50px;
+	}
+
+	.bookmarkManager {
+		order: 1;
+		width: 60%;
+	}
+
+	.heroImage {
+		order: 2;
+	}
+
+	.bookmarkManager > .text,
+	.bookmarkManager > .title {
+		text-align: left;
+	}
+
+	.bookmarkManager > .title {
+		font-size: 3rem;
+	}
+
+	.backgroundElement {
+		height: 250px;
+		border-bottom-left-radius: 150px;
+		left: 89%;
+		top: 70%;
+	}
+
+	.img {
+		max-width: 500px;
+		left: 60%;
+	}
+
+	.navigation {
+		margin-bottom: 60px;
+		padding: 0 50px;
+	}
+
+	button {
+		width: 40%;
+		margin-right: 10px;
+		max-width: 150px;
+	}
+	.buttonSection {
+		justify-content: start;
+	}
+
+	.feature {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.text,
+	.questionsAccordion {
+		width: 40%;
+	}
+
+	.bookmarkManager > .text,
+	.bookmarkSectionText > .text {
+		width: 100%;
+	}
+	.options {
+		flex-direction: row;
+		width: 60%;
+	}
+
+	.options.flex-column .option {
+		border-top: none;
+	}
+
+	.option.active::after {
+		width: 100%;
+		left: 0;
+		bottom: -10px;
+	}
+
+	.option {
+		margin-bottom: 10px;
+
+		transition: color 0.3s;
+	}
+
+	.bookmarkSection {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+		margin-top: 50px;
+	}
+
+	.bookmarkSectionText {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		order: 2;
+		width: 60%;
+	}
+
+	.bookmarkSectionText > h2,
+	.bookmarkSectionText > .text {
+		text-align: left;
+	}
+
+	.bookmarkSectionText > h2 {
+		margin: 0;
+	}
+
+	.bookmarkSectionText > button {
+		display: flex;
+		width: 20%;
+		min-width: 100px;
+		max-width: 125px;
+	}
+
+	.bookmarkImage {
+		order: 1;
+		left: 0;
+	}
+
+	.rotated {
+		height: 300px;
+		top: 75%;
+		left: 10%;
+		width: 150%;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 100px;
+	}
+
+	.bookmarkSection > .heroImage {
+		left: -10%;
+	}
+
+	.extension {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.extension > .text {
+		width: 45%;
+	}
+
+	.cardsContainer {
+		display: flex;
+		flex-direction: row;
+		margin-top: 50px;
+		height: 450px;
+	}
+
+	.card:nth-child(1) {
+		align-self: flex-start;
+	}
+	.card:nth-child(2) {
+		align-self: center;
+	}
+	.card:nth-child(3) {
+		align-self: flex-end;
+	}
+
+	.cardButton {
+		margin-right: 0;
+		border: 3px solid var(--light-blue);
+		max-width: 500px;
+		transition: background-color 0.3s, color 0.3s;
+	}
+	.card {
+		max-width: 250px;
+	}
+
+	.newsletter > h2 {
+		width: 25%;
+		letter-spacing: 0.2rem;
+	}
+
+	.form {
+		align-items: flex-start;
+		width: 35%;
+		flex-direction: row;
+		margin-bottom: 20px;
+	}
+
+	.newsBtn {
+		margin: 0;
+		border: 3px solid var(--light-red);
+		transition: color 0.3s;
+		margin-left: 10px;
+		min-width: 100px;
+		max-width: 120px;
+	}
+
+	.counter {
+		font-size: 1rem;
+	}
+	.input {
+		font-size: 1.25rem;
+		padding: 12px;
+	}
+
+	.footer {
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 20px 90px;
+		font-size: 1.2rem;
+	}
+
+	.footerLogo {
+		margin: 0;
+		max-width: 150px;
+		margin: 0px 40px;
+	}
+
+	.footerLink {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0px 25px;
+	}
+
+	.footerContainer {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.socials {
+		width: 15%;
+		margin: 0;
+	}
+
+	.modal > .options > .optionContainer > .active::after {
+		bottom: 0;
+	}
+}
+
+@media (min-width: 400px) {
+	.modalContent > .modalImage > .backgroundElement {
+		left: -2%;
+	}
+}
+
+@media (max-width: 400px) {
+	.modalContent > .modalImage > .backgroundElement {
+		height: 100px;
+	}
+
+	.modalContent > .modalImage > .imgModal {
+		max-width: 110px;
+	}
+}
+
+@media (min-width: 610px) {
+	.backgroundElement {
+		left: 90%;
+	}
+
+	.rotated {
+		top: 75%;
+		left: 0%;
+		width: 150%;
+	}
+	.modal {
+		height: 400px;
+	}
+
+	.modal > .options {
+		width: 80%;
+	}
+
+	.imgModal {
+		max-width: 250px;
+	}
+
+	.modalContent > .modalImage > .backgroundElement {
+		height: 200px;
+	}
+
+	.modalContent > .modalText {
+		margin-bottom: 50px;
+	}
+
+	.modalContent > .modalText > h2 {
+		font-size: 2rem;
+	}
+}
+
+@media (min-width: 850px) {
+	.rotated {
+		left: 5%;
+	}
+
+	.menuContainer {
+		padding: 50px;
+	}
+}
